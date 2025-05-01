@@ -51,7 +51,8 @@ class BooksView extends StatelessWidget {
               children: books.map((book) {
                 return GestureDetector(
                   onTap: () {
-                    // 设置当前详情并跳转
+                    // Jump to detail page
+                    // and show book detail
                     context.read<DetailCubit>().showDetail(book);
                     Navigator.push(
                       context,
