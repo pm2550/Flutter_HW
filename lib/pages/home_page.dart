@@ -102,10 +102,14 @@ class _HomePageState extends State<HomePage> {
             Expanded(
               child: BlocBuilder<BookCubit, BookState>(
                 builder: (context, state) {
+                  if (state is BookLoadingState) {
+                    return Center(child: CircularProgressIndicator());
+                  }
                   if (state is BookViewState) {
                     return BooksView(books: state.books);
-                  } 
-                  return Center(child: CircularProgressIndicator());
+                  }
+                  // Failed to load books
+                  return Center(child: Text('Failed to load', style: TextStyle(color: Colors.red, fontSize: 18)));
                 },
               ),
             ),

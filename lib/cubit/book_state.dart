@@ -10,6 +10,11 @@ class BookViewState extends BookState {
 
 
 
+class BookLoadingState extends BookState {}
+
+
+
+
 abstract class DetailState {}
 class DetailInitial extends DetailState {}
 class DetailViewState extends DetailState {

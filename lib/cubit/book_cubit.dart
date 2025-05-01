@@ -11,7 +11,8 @@ class BookCubit extends Cubit<BookState> {
     emit(BookViewState(repository.books)); 
   }
 
-  void sortBooks(String sortBy) {
+  void sortBooks(String sortBy) async {
+    emit(BookLoadingState());
     final books = List<Book>.from(repository.books)
       ..sort((a, b) => sortBy == 'author'
           ? a.author.compareTo(b.author)
