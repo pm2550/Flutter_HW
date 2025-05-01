@@ -5,7 +5,7 @@ class Book {
   String author;
   String title;
   String description;
-  String imageAsset; // 资产图片路径
+  String imageAsset; 
 
   Book({
     required this.author,
